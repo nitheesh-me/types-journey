@@ -1,0 +1,116 @@
+/*
+ * highlight.js theme built on the Catppuccin variables, so one stylesheet
+ * covers all four flavours — the palette swaps underneath it.
+ * Token mapping follows catppuccin/highlightjs.
+ */
+.hljs {
+	color: var(--ctp-text);
+	background: transparent;
+}
+
+.hljs-keyword,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-name,
+.hljs-variable {
+	color: var(--ctp-mauve);
+}
+.hljs-variable.language_ {
+	color: var(--ctp-mauve);
+	font-style: italic;
+}
+.hljs-built_in,
+.hljs-doctag,
+.hljs-deletion {
+	color: var(--ctp-red);
+}
+.hljs-type,
+.hljs-title.class_,
+.hljs-selector-tag {
+	color: var(--ctp-yellow);
+}
+.hljs-literal,
+.hljs-number,
+.hljs-meta,
+.hljs-variable.constant_ {
+	color: var(--ctp-peach);
+}
+.hljs-operator {
+	color: var(--ctp-sky);
+}
+.hljs-punctuation {
+	color: var(--ctp-subtext1);
+}
+.hljs-property,
+.hljs-bullet,
+.hljs-selector-pseudo,
+.hljs-formula {
+	color: var(--ctp-teal);
+}
+.hljs-regexp {
+	color: var(--ctp-pink);
+}
+.hljs-string,
+.hljs-char.escape_,
+.hljs-attribute,
+.hljs-code,
+.hljs-addition {
+	color: var(--ctp-green);
+}
+.hljs-quote {
+	color: var(--ctp-green);
+	font-style: italic;
+}
+.hljs-subst,
+.hljs-tag,
+.hljs-template-tag,
+.hljs-template-variable {
+	color: var(--ctp-subtext0);
+}
+.hljs-symbol {
+	color: var(--ctp-flamingo);
+}
+.hljs-title,
+.hljs-title.function_,
+.hljs-section,
+.hljs-attr,
+.hljs-selector-id {
+	color: var(--ctp-blue);
+}
+.hljs-params {
+	color: var(--ctp-text);
+}
+.hljs-comment {
+	color: var(--ctp-overlay0);
+	font-style: italic;
+}
+.hljs-link {
+	color: var(--ctp-sapphire);
+	text-decoration: underline;
+}
+.hljs-emphasis {
+	color: var(--ctp-red);
+	font-style: italic;
+}
+.hljs-strong {
+	color: var(--ctp-red);
+	font-weight: bold;
+}
+
+/* reveal.js highlights the current line range while stepping through code. */
+.reveal .hljs.has-highlights tr:not(.highlight-line) {
+	opacity: 0.35;
+}
+.reveal .hljs .highlight-line {
+	background: color-mix(in srgb, var(--ctp-surface1), transparent 55%);
+}
+.reveal .hljs-ln-numbers {
+	color: var(--ctp-overlay0);
+	padding-right: 0.75em;
+	user-select: none;
+}
+
+/* High contrast: stepping through code should dim the other lines, not hide them. */
+:root[data-flavour='contrast'] .reveal .hljs.has-highlights tr:not(.highlight-line) {
+	opacity: 0.55;
+}

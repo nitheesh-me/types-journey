@@ -2,13 +2,16 @@
 	"name": "example-svelte-revealjs",
 	"private": true,
 	"version": "0.0.1",
+	"license": "CC0-1.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"check:snippets": "node scripts/check-snippets.mjs",
+		"check:lean": "node scripts/check-lean.mjs"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.8",
@@ -20,6 +23,8 @@
 		"vite": "^5.4.11"
 	},
 	"dependencies": {
+		"marked": "^18.0.9",
+		"mermaid": "^11.16.1",
 		"reveal.js": "^5.1.0"
 	}
 }

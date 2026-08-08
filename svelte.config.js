@@ -18,6 +18,12 @@ const config = {
          precompress: false,
          trailingSlash: 'always',
       }),
+
+      // Handouts live under static/ so the same file is both inlined into a
+      // deck (via ?raw) and downloadable at /handout/<lecture>/<name>.lean.
+      alias: {
+         $handouts: 'static/handout',
+      },
 	}
 };
 

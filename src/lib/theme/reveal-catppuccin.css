@@ -1,0 +1,102 @@
+/*
+ * Re-points reveal.js's theme variables at Catppuccin. Loaded after
+ * reveal's own theme, so it only has to override colours — the serif
+ * theme's typography and spacing stay.
+ */
+.reveal-viewport {
+	background: var(--ctp-base);
+}
+
+.reveal {
+	--r-background-color: var(--ctp-base);
+	--r-main-color: var(--ctp-text);
+	--r-heading-color: var(--ctp-mauve);
+	--r-link-color: var(--ctp-blue);
+	--r-link-color-dark: var(--ctp-sapphire);
+	--r-link-color-hover: var(--ctp-sky);
+	--r-selection-background-color: var(--ctp-surface2);
+	--r-selection-color: var(--ctp-text);
+	--r-overlay-element-bg-color: 205, 214, 244;
+	--r-overlay-element-fg-color: 30, 30, 46;
+
+	color: var(--ctp-text);
+}
+
+.reveal a {
+	color: var(--r-link-color);
+}
+.reveal a:hover {
+	color: var(--r-link-color-hover);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	color: var(--ctp-mauve);
+}
+/* Section dividers read as the "chapter" colour. */
+.reveal h3 {
+	color: var(--ctp-lavender);
+}
+
+/* Inline code in prose. */
+.reveal code:not([class*='language-']) {
+	padding: 0.05em 0.3em;
+	border-radius: 0.25em;
+	background: color-mix(in srgb, var(--ctp-surface0), transparent 35%);
+	color: var(--ctp-maroon);
+}
+
+.reveal pre {
+	box-shadow: none;
+	background: var(--ctp-mantle);
+	border-radius: 0.4em;
+}
+.reveal pre code {
+	background: transparent;
+	padding: 0.8em 1em;
+	border-radius: 0.4em;
+	max-height: 32vh;
+}
+
+.reveal blockquote {
+	background: var(--ctp-surface0);
+	box-shadow: none;
+	border-left: 4px solid var(--ctp-mauve);
+}
+
+.reveal table th,
+.reveal table td {
+	border-bottom-color: var(--ctp-surface1);
+}
+.reveal table th {
+	color: var(--ctp-lavender);
+}
+
+.reveal .progress {
+	color: var(--ctp-mauve);
+}
+.reveal .controls {
+	color: var(--ctp-overlay1);
+}
+.reveal .slide-number {
+	background: color-mix(in srgb, var(--ctp-crust), transparent 25%);
+	color: var(--ctp-subtext0);
+}
+
+/* KaTeX inherits the slide colour rather than staying black. */
+.reveal .katex {
+	color: var(--ctp-text);
+}
+
+/*
+ * High contrast: a code block cannot rely on being a slightly lighter black,
+ * so it gets an edge. Blocks that already carry a role border keep theirs,
+ * because the component's own rule is more specific.
+ */
+:root[data-flavour='contrast'] .reveal pre {
+	border: 1px solid var(--ctp-surface2);
+}
