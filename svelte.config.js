@@ -3,9 +3,16 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://svelte.dev/docs/kit/integrations
-	// for more information about preprocessors
-	preprocess: vitePreprocess(),
+	preprocess: [
+		vitePreprocess({ script: true }),
+		{
+			markup({ content }) {
+				return {
+					code: content.replace(/<script(\s+[^>]*)?\s+lang=(['"])ts\2/g, '<script$1')
+				};
+			}
+		}
+	],
 
 	kit: {
 		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.

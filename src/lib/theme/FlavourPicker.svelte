@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { flavour, FLAVOURS, FLAVOUR_LABELS, type FlavourChoice } from './flavour';
+	import { flavour, FLAVOURS, FLAVOUR_LABELS } from './flavour';
+	import type { FlavourChoice } from './flavour';
 
 	/** `floating` parks the picker in a corner, for use over a slide deck. */
 	export let floating: boolean = false;
